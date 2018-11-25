@@ -6,6 +6,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -14,6 +15,12 @@ const styles = theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular
+  },
+  button: {
+    margin: theme.spacing.unit
+  },
+  atag: {
+    textDecoration: 'none'
   }
 });
 
@@ -25,6 +32,8 @@ function ResultPanel(props) {
   //   'http://localhost:3000/snapshot/mobile/1a7eeb30-f052-11e8-b610-ddd470519f6e';
   // const desktopUrl =
   //   'http://localhost:3000/snapshot/desktop/1a7eeb30-f052-11e8-b610-ddd470519f6e';
+
+  // const url = '';
   return (
     <div className={classes.root}>
       <ExpansionPanel className={classes.panel}>
@@ -34,22 +43,42 @@ function ResultPanel(props) {
         <ExpansionPanelDetails>
           <div>
             <div>
-              <a target="_blank" rel="noopener noreferrer" href={mobileUrl}>
-                Mobile
-              </a>
-            </div>
-            <div>
-              <a target="_blank" rel="noopener noreferrer" href={desktopUrl}>
-                Desktop
-              </a>
-            </div>
-            <div>
-              <a target="_blank" rel="noopener noreferrer" href={url}>
-                Real Page
-              </a>
-            </div>
+              <Button variant="outlined" className={classes.button}>
+                <a
+                  className={classes.atag}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={mobileUrl}
+                >
+                  Mobile
+                </a>
+              </Button>
 
-            {/* <img className={classes.image} src={mobileUrl} alt="mobile" /> */}
+              <Button variant="outlined" className={classes.button}>
+                <a
+                  className={classes.atag}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={desktopUrl}
+                >
+                  Desktop
+                </a>
+              </Button>
+
+              <Button variant="outlined" className={classes.button}>
+                <a
+                  className={classes.atag}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={url}
+                >
+                  Real Page
+                </a>
+              </Button>
+            </div>
+            <div>
+              <img className={classes.image} src={mobileUrl} alt="mobile" />
+            </div>
           </div>
         </ExpansionPanelDetails>
       </ExpansionPanel>
