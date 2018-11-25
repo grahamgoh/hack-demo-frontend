@@ -98,7 +98,7 @@ class App extends Component {
                 gutterBottom
                 className={classes.header}
               >
-                Seek Ad Tool
+                Snapshot App
               </Typography>
               <FileUpload
                 onChange={this.onLogoChanged}
