@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
-    width: '75%'
+    width: '100%'
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -35,42 +35,36 @@ function ResultPanel(props) {
     <div className={classes.root}>
       <ExpansionPanel className={classes.panel}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Result Snapshots</Typography>
+          <Typography className={classes.heading}>Result Preview</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <div>
             <div>
-              <Button variant="outlined" className={classes.button}>
-                <a
-                  className={classes.atag}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={mobileUrl}
-                >
-                  Mobile
-                </a>
+              <Button
+                target="_blank"
+                href={mobileUrl}
+                variant="outlined"
+                className={classes.button}
+              >
+                Mobile
               </Button>
 
-              <Button variant="outlined" className={classes.button}>
-                <a
-                  className={classes.atag}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={desktopUrl}
-                >
-                  Desktop
-                </a>
+              <Button
+                target="_blank"
+                href={desktopUrl}
+                variant="outlined"
+                className={classes.button}
+              >
+                Desktop
               </Button>
 
-              <Button variant="outlined" className={classes.button}>
-                <a
-                  className={classes.atag}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={url}
-                >
-                  Real Page
-                </a>
+              <Button
+                target="_blank"
+                href={url}
+                variant="outlined"
+                className={classes.button}
+              >
+                Webpage
               </Button>
             </div>
             <div>

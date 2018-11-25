@@ -5,16 +5,6 @@ async function getSnapshots(logo, cover) {
   const { url, id } = await uploadImages(logo, cover);
   const mobileUrl = `${config.GENERATOR_API_URL}/snapshot/mobile/${id}`;
   const desktopUrl = `${config.GENERATOR_API_URL}/snapshot/desktop/${id}`;
-
-  // const mobileResponse = axios.get(mobileUrl);
-  // const desktopResponse = axios.get(desktopUrl);
-
-  // const [mobileSnapshot, desktopSnapshot] = await Promise.all([
-  //   mobileResponse,
-  //   desktopResponse
-  // ]);
-  // console.log('desktopSnapshot: ', desktopSnapshot);
-  // console.log('mobileSnapshot: ', mobileSnapshot);
   return { mobileUrl, desktopUrl, url };
 }
 

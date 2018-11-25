@@ -25,12 +25,18 @@ const styles = theme => ({
     width: '100vw',
     height: '100vh'
   },
+  demo: {
+    width: '45%',
+    minWidth: '22rem',
+    maxWidth: '30rem'
+  },
   header: {
     textAlign: 'center'
   },
   button: {
-    width: '18rem',
-    margin: theme.spacing.unit
+    width: '100%',
+    margin: theme.spacing.unit,
+    marginBottom: '0'
   },
   progress: {
     margin: theme.spacing.unit * 2
@@ -93,13 +99,13 @@ class App extends Component {
         >
           <Grid item className={classes.demo}>
             <Paper className={classes.paper}>
-              <Typography
+              {/* <Typography
                 variant="display1"
                 gutterBottom
                 className={classes.header}
               >
                 Snapshot App
-              </Typography>
+              </Typography> */}
               <FileUpload
                 onChange={this.onLogoChanged}
                 value={this.state.logo}

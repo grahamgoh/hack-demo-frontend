@@ -6,8 +6,12 @@ import React, { Component } from 'react';
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
-    width: '18rem'
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    width: '100%'
+  },
+  div: {
+    width: '100%'
   },
   input: {
     display: 'none'
