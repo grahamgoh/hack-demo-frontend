@@ -9,6 +9,8 @@ import service from './service/generate-service';
 import ErrorAlert from './components/ErrorAlert';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ResultPanel from './components/ResultPanel';
+import SuccessSnackbar from './components/SuccessSnackbar';
+
 const styles = theme => ({
   paper: {
     ...theme.mixins.gutters(),
@@ -41,7 +43,8 @@ class App extends Component {
     cover: { path: '' },
     showError: false,
     showLoader: false,
-    snapshots: undefined
+    snapshots: undefined,
+    showSuccess: false
   };
 
   onGenerateClicked = async () => {
@@ -52,11 +55,15 @@ class App extends Component {
         const result = await service.getSnapshots(logo, cover);
         this.setState({ snapshots: result });
       } finally {
-        this.setState({ showLoader: false });
+        this.setState({ showLoader: false, showSuccess: true });
       }
     } else {
       this.setState({ showError: true });
     }
+  };
+
+  onSuccessSnackBarClosed = () => {
+    this.setState({ showSuccess: false });
   };
 
   onLogoChanged = e => {
@@ -125,6 +132,10 @@ class App extends Component {
         {this.state.showError && (
           <ErrorAlert isOpen={this.state.showError} onClose={this.closeAlert} />
         )}
+        <SuccessSnackbar
+          open={this.state.showSuccess}
+          handleClose={this.onSuccessSnackBarClosed}
+        />
       </div>
     );
   }
