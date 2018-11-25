@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
-    width: '30vw'
+    width: '18rem'
   },
   input: {
     display: 'none'

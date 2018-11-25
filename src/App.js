@@ -29,7 +29,7 @@ const styles = theme => ({
     textAlign: 'center'
   },
   button: {
-    width: '30vw',
+    width: '18rem',
     margin: theme.spacing.unit
   },
   progress: {
